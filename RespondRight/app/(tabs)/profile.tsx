@@ -5,47 +5,24 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
-import * as React from "react";
-import { Avatar } from "@rneui/base";
-
-const ProfileAvatar = () => {
-  return (
-    <Avatar
-      avatarStyle={{}}
-      containerStyle={{ backgroundColor: "#BDBDBD" }}
-      icon={{}}
-      iconStyle={{}}
-      imageProps={{}}
-      onLongPress={() => alert("onLongPress")}
-      onPress={() => alert("onPress")}
-      overlayContainerStyle={{}}
-      placeholderStyle={{}}
-      rounded
-      size="large"
-      source={{ uri: "" }}
-      title="P"
-      titleStyle={{}}
-    />
-  );
-}
-
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerImage={
-        <ThemedView style={styles.stepContainer}>
-          <ProfileAvatar />
-          <ThemedText type="title">Hello User!</ThemedText>
-          <ThemedText type="subtitle">Study with us</ThemedText>
-        </ThemedView>
+        <Image
+          source={require('@/assets/images/partial-react-logo.png')}
+          style={styles.reactLogo}
+        />
       }>
       <ThemedView style={styles.titleContainer}>
+        <ThemedText type="title">test</ThemedText>
+        <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
+        <ThemedText type="subtitle">Test</ThemedText>
         <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
+          Edit <ThemedText type="defaultSemiBold">app/(tabs)/profile.tsx</ThemedText> to see changes.
           Press{' '}
           <ThemedText type="defaultSemiBold">
             {Platform.select({
@@ -87,5 +64,11 @@ const styles = StyleSheet.create({
     gap: 8,
     marginBottom: 8,
   },
-
+  reactLogo: {
+    height: 178,
+    width: 290,
+    bottom: 0,
+    left: 0,
+    position: 'absolute',
+  },
 });
